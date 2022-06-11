@@ -1,38 +1,50 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-
+// import Logo from "../assets/productos/Logo.png";
+import { Link, useLocation, NavLink } from "react-router-dom";
 const NavBar = () => {
   const apretar = (e) => {
     console.log(`Apretando ${e.target.outerText}`);
     // console.log(e.target.outerText)
   };
-
-  // ecommerce iniciar sesion registrarse carrito
-  // seccion 1, 2, 3, 4
+  const location = useLocation();
+  const urlActual = location.pathname;
+  console.log(urlActual)
   return (
     <nav className="flex-column justify-center border items-center">
-      <div className="flex justify-around items-center">
+      <ul className="flex justify-end">
+        <li className="uppercase mx-1 text-zinc-400 text-sm cursor-pointer">
+          Mi cuenta |
+        </li>
+        <li className="uppercase mx-1 text-zinc-400 text-sm cursor-pointer">
+          Sobre nosotros |
+        </li>
+        <li className="uppercase mx-1 text-zinc-400 text-sm cursor-pointer">
+          Favoritos |
+        </li>
+        <li className="uppercase mx-1 text-zinc-400 text-sm cursor-pointer">
+          Iniciar Sesión
+        </li>
+      </ul>
 
-        <div className="w-2/4 ml-5 text-3xl">
-        <h1>Ecommerce</h1>
-        </div>
+      <div className="flex justify-between items-center py-5 bg-zinc-900">
+        <Link to="/">
+          <h1 className="text-3xl ml-3 text-zinc-400 cursor-pointer">
+            Ecommerce
+          </h1>
+        </Link>
 
-        <div className="flex justify-around w-2/4">
-        <button>Iniciar sesión</button>
-        <button>Registrarse</button>
+        <Link className={`${urlActual === "/category/gimnasio" ? "text-blue-300" : "text-white"} bg-zinc-600 rounded-xl p-1 font-bold`} to="/category/gimnasio">Gimnasio</Link>
+        <Link className={`${urlActual === "/category/outdoor" ? "text-blue-300" : "text-white"} bg-zinc-600 rounded-xl p-1 font-bold`} to="/category/outdoor">Outdoor</Link>
+        <Link className={`${urlActual === "/category/deportes-de-contacto" ? "text-blue-300" : "text-white"} bg-zinc-600 rounded-xl p-1 font-bold`} to="/category/deportes-de-contacto">Deportes de contacto</Link>
+        <Link className={`${urlActual === "/category/indumentaria" ? "text-blue-300" : "text-white"} bg-zinc-600 rounded-xl p-1 font-bold`} to="/category/indumentaria">Indumentaria</Link>
+        
+
         <CartWidget />
-        </div>
+      </div>
+{/* 
 
-      </div>
-      
-      <div className="border bg-gray-700">
-        <ul  className="flex justify-end items-center mr-5">
-          <li className="mr-5 text-white hover:text-yellow-200 transition-colors cursor-pointer">Ofertas</li>
-          <li className="mr-5 text-white hover:text-yellow-200 transition-colors cursor-pointer">Categorías</li>
-          <li className="mr-5 text-white hover:text-yellow-200 transition-colors cursor-pointer">Favoritos</li>
-          <li className="mr-5 text-white hover:text-yellow-200 transition-colors cursor-pointer">Ayuda</li>
-        </ul>
-      </div>
+*/}
     </nav>
   );
 };
