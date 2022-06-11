@@ -37,8 +37,6 @@ if(loading){
 }
   return (
     <div className="max-w-screen-lg my-0 mx-auto">
-      <h1 className="text-center text-3xl font-bold text-zinc-800 my-5"></h1>
-      Elegí entre más de 10 productos diferentes ;)
       {products.length > 0 ? (
         <ItemList products={products} />
       ) : (
