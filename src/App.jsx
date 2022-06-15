@@ -11,7 +11,7 @@ function App() {
   // const[cont, setCont] = useState(0);
   // const[stock, setStock] = useState(10);
   return (
-    <div className="App">
+    <div className="App bg-zinc-300">
       {/* 
       <ItemListContainer /> */}
       <BrowserRouter>

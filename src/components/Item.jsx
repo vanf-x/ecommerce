@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Contador from "./Contador";
 // max-w-[50%]
 const Item = ({ name, img, price, id}) => {
 
@@ -9,7 +8,7 @@ const mostrarDetalles = () =>{
 }
 
   return (
-    <li className=" sm:p-5 sm:m-5 my-3 p-3 rounded-md border shadow-xl">
+    <li className="sm:max-w-sm sm:min-w-xs w-full m-3 p-3 rounded-md border shadow-xl bg-white">
 
       <div className="flex-col justify-center">
       <img src={img} alt={name} className="w-48 my-0 mx-auto"/>
@@ -20,10 +19,10 @@ const mostrarDetalles = () =>{
 
       <div className="flex justify-between">
 
-        <Link to={`/detail/${id}`} className="border bg-cyan-600 hover:bg-cyan-700 transition-colors font-bold text-white text-lg p-2 rounded-md">Detalle</Link>
-        <button className="bg-green-600 hover:bg-green-700 transition-colors text-white font-bold text-lg p-2 rounded-md">
+        <Link to={`/detail/${id}`} className="border bg-cyan-600 hover:bg-cyan-700 transition-colors font-bold text-white text-lg p-2 rounded-md w-full text-center">Ver detalles</Link>
+        {/* <button className="bg-green-600 hover:bg-green-700 transition-colors text-white font-bold text-lg p-2 rounded-md">
           Agregar
-        </button>
+        </button> */}
       </div>
     </li>
   );
