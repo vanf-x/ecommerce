@@ -1,7 +1,12 @@
 import React from "react";
+import { useContext } from "react";
 import {Link} from "react-router-dom"
-// max-w-[50%]
+// import { Context } from "../App";
+
 const Item = ({ name, img, price, id}) => {
+
+// const context = useContext(Context);
+// console.log(context)
 
 const mostrarDetalles = () =>{
   console.log("xd")

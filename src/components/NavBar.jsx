@@ -29,8 +29,8 @@ const NavBar = () => {
       <div className="bg-zinc-900 py-5">
         <div className="flex justify-around items-center">
           <Link to="/">
-            <h1 className="text-3xl sm:text-5xl font-bold ml-3 text-white hover:text-zinc-300 transition-colors cursor-pointer">
-              Ecommerce
+            <h1 className="text-3xl sm:text-5xl font-bold ml-3 text-white hover:text-blue-400 transition-colors cursor-pointer">
+              Lorem Store
             </h1>
           </Link>
           <CartWidget />

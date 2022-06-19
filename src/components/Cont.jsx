@@ -6,7 +6,7 @@ const Cont = ({ cant, setCant, stock }) => {
   };
 
   const disminuir = () => {
-    if (cant > 0) {
+    if (cant > 1) {
       setCant((cant -= 1));
     }
   };

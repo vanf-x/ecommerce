@@ -1,14 +1,20 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "../context/CartContext";
 import Cont from "./Cont";
 
 const ItemDetail = ({ id, name, price, category, stock, description, img }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const { addItem } = useContext(CartContext);
+
   const handleAdd = () => {
-    console.log(Number(cant));
+    addItem({ id, name, price, cant });
+    setQuantityAdded(cant);
   };
 
-  const [cant, setCant] = useState(0);
+  const [cant, setCant] = useState(1);
   return (
     <div className="border sm:w-96 sm:mx-auto mx-10 my-5 p-3 shadow-xl rounded-xl bg-white">
       <div className="flex bg-zinc-700 px-3 rounded-lg py-1">
@@ -38,12 +44,21 @@ const ItemDetail = ({ id, name, price, category, stock, description, img }) => {
       <div className="w-full flex justify-center content-center">
         <Cont cant={cant} setCant={setCant} stock={stock} />
       </div>
-      <button
-        onClick={handleAdd}
-        className="bg-green-500 text-white font-bold p-2 text-xl rounded w-full hover:bg-green-600 transition-colors"
-      >
-        Agregar al carrito
-      </button>
+      <div>
+        {quantityAdded === 0 ? (
+          <button
+            onClick={handleAdd}
+            className="bg-green-500 text-white font-bold p-2 text-xl rounded w-full hover:bg-green-600 transition-colors"
+          >
+            Agregar al carrito
+          </button>
+        ) : (
+          <Link 
+          to="/cart"
+          className="bg-green-500 text-white font-bold p-2 text-xl rounded w-full block text-center hover:bg-green-600 transition-colors"
+          >Terminar compra</Link>
+        )}
+      </div>
     </div>
   );
 };
