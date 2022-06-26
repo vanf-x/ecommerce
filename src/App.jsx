@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartView from "./components/CartView";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 //BrowserRouter: qué componentes hijos van a tener acceso a la barra e historial de navegación
 //Route:
@@ -28,7 +29,7 @@ function App() {
               path="/detail/:productId"
               element={<ItemDetailContainer />}
             />
-            <Route path="/cart" element={<h1>CART</h1>}/>
+            <Route path="/cartView" element={<CartView/>}/>
           </Routes>
         </BrowserRouter>
       </CartProvider>

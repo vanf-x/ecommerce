@@ -9,7 +9,7 @@ const NavBar = () => {
   };
   const location = useLocation();
   const urlActual = location.pathname;
-  console.log(urlActual);
+
   return (
     <nav className="flex-column justify-center border items-center">
       <ul className="flex justify-end">
