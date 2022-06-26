@@ -54,8 +54,8 @@ const ItemDetail = ({ id, name, price, category, stock, description, img }) => {
           </button>
         ) : (
           <Link 
-          to="/cart"
-          className="bg-green-500 text-white font-bold p-2 text-xl rounded w-full block text-center hover:bg-green-600 transition-colors"
+          to="/cartView"
+          className="bg-green-500 text-white font-black p-2 text-xl rounded w-full block text-center hover:bg-green-600 transition-colors"
           >Terminar compra</Link>
         )}
       </div>
